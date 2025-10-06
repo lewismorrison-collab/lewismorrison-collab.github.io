@@ -1,36 +1,16 @@
+// @ts-check
 import { defineConfig } from "astro/config";
-import preact from "@astrojs/preact";
-import sitemap from "@astrojs/sitemap";
-import swup from "@swup/astro";
 
-import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+
+import { template } from "./src/settings";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://djsiddz.github.io",
-  base: "/space-ahead",
-  integrations: [
-    swup({
-      theme: ["overlay", { direction: "to-top" }],
-      cache: true,
-      progress: true,
-    }),
-    preact(),
-    sitemap(),
-  ],
-
-  image: {
-    responsiveStyles: true,
-  },
-
-  vite: {
-    plugins: [tailwindcss()],
-  },
+    integrations: [react(), tailwind(), sitemap()],
+    site: template.website_url,
+    base: template.base,
 });
-
-//swup theme variations:
-// theme: "fade"
-// theme: ["overlay", { direction: "to-top"}]
-//
-// for overlay and fade, further customization can be done in animate.css file
-// To know about swup, visit https://swup.js.org/
