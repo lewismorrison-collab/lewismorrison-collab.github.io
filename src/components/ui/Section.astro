@@ -1,0 +1,9 @@
+---
+const { bg = 'primary' } = Astro.props;
+---
+
+<section  class=`border-b bg-${bg} w-full `>
+  <div class="max-w-5xl my-4 p-4 mx-auto ">
+    <slot />
+  </div>
+</section>

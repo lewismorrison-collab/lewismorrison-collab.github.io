@@ -99,4 +99,10 @@ This is the content of the new blog post. Write your article here using Markdown
 Once you have added the new blog post, it will be automatically included in the blog collection and displayed on the blog page of your website.
 
 ## Deploy
+
 The template provides a workflow to deploy the website on Github pages as a static website.
+**Set GitHub Pages source correctly**
+
+1. Go to your repo → Settings → Pages
+2. Under "Build and deployment" → Source
+3. Change from "Deploy from a branch" to "GitHub Actions"
